@@ -1,10 +1,6 @@
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { verifyToken } from '../utils/jwt.handler';
-import { JwtPayload } from 'jsonwebtoken';
-
-export interface RequestExt extends Request {
-  user?: string | JwtPayload;
-}
+import { RequestExt } from '../interfaces/req-ext.interface';
 
 const checkJwt = (req: RequestExt, res: Response, next: NextFunction) => {
   try {
