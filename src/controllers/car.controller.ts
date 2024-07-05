@@ -6,7 +6,7 @@ import {
   getCars,
   insertCar,
   updateCar,
-} from '../services/item.service';
+} from '../services/car.service';
 
 const getCarController = async (req: Request, res: Response) => {
   try {
