@@ -1,9 +1,19 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import {
+  deleteItem,
+  getItem,
+  getItems,
+  postItem,
+  updateItem,
+} from '../controllers/item';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.send();
-});
+router
+  .get('/', getItems)
+  .get('/:id', getItem)
+  .post('/', postItem)
+  .put('/:id', updateItem)
+  .delete('/:id', deleteItem);
 
 export { router };
